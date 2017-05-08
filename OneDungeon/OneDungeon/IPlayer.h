@@ -2,6 +2,7 @@
 #ifndef IPLAYER_H
 #define IPLAYER_H
 
+#include "IInventory.h"
 #include "Position.h"
 
 class IPlayer
@@ -14,8 +15,8 @@ public:
 	virtual int getAttackValue() = 0;
 	virtual int getEvadeValue() = 0;
 	virtual bool inflictDamage(int attackValue) = 0;
-	virtual void setGear(Item* item) = 0;
-	virtual bool addLoot(Item* item) = 0;
+	virtual void setGear(IItem* item) = 0;
+	virtual bool addLoot(IItem* item) = 0;
 
 	virtual Position getPosition() = 0;
 	virtual Position setPosition(Position pos) = 0;
