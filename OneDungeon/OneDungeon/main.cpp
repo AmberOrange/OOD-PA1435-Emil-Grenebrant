@@ -5,7 +5,7 @@ using namespace std;
 int main()
 {
 	cout << "Hello!" << endl;
-	cout << "This is just a test!" << endl;
+	cout << "Ganon är en trevlig snubbe" << endl;
 
 	cin.ignore();
 
