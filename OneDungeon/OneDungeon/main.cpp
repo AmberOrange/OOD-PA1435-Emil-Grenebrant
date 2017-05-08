@@ -5,9 +5,9 @@ using namespace std;
 int main()
 {
 	cout << "Hello!" << endl;
-	cout << "Ganon är en trevlig snubbe" << endl;
+	cout << "A change has occured!" << endl;
 
-	cin.ignore();
+	system("pause");
 
 	return 0;
 }
