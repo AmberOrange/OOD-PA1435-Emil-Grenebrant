@@ -5,7 +5,7 @@ using namespace std;
 int main()
 {
 	cout << "Hello!" << endl;
-	cout << "Ganon är en trevlig snubbe" << endl;
+	cout << "A change has occured!" << endl;
 
 	cout << "Samurhaj är en haj!" << endl;
 
