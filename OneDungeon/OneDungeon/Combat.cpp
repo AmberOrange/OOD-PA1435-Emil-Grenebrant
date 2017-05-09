@@ -32,40 +32,6 @@ int Combat::getPlayerChoice()
 	return playerChoice;
 }
 
-Combat::Combat()
-{
-}
-
-
-Combat::~Combat()
-{
-}
-
-void Combat::initCombat(IPlayer* player, IMonster* enemy)
-{
-	bool playerDead = false;
-	bool playerEvadeResult = 0;
-
-	do
-	{
-		int playerChoice = getPlayerChoice();
-
-		switch (playerChoice)
-		{
-		case 1:
-			playerDead = attack(player, enemy);
-			break;
-		case 2:
-			playerEvadeResult = evade(player, enemy);
-			break;
-		}
-
-		if (playerDead || playerEvadeResult == 1)
-			std::cout << "You died!" << std::endl;
-
-	} while (!playerDead && playerEvadeResult != 2 && playerEvadeResult != 1);
-}
-
 bool Combat::attack(IPlayer* player, IMonster* enemy)
 {
 	bool playerDead = false;
@@ -103,3 +69,38 @@ int Combat::evade(IPlayer* player, IMonster* enemy)
 
 	return result;
 }
+
+Combat::Combat()
+{
+}
+
+
+Combat::~Combat()
+{
+}
+
+void Combat::initCombat(IPlayer* player, IMonster* enemy)
+{
+	bool playerDead = false;
+	int playerEvadeResult = 0;
+
+	do
+	{
+		int playerChoice = getPlayerChoice();
+
+		switch (playerChoice)
+		{
+		case 1:
+			playerDead = attack(player, enemy);
+			break;
+		case 2:
+			playerEvadeResult = evade(player, enemy);
+			break;
+		}
+
+		if (playerDead || playerEvadeResult == 1)
+			std::cout << "You died!" << std::endl;
+
+	} while (!playerDead && playerEvadeResult != 2 && playerEvadeResult != 1);
+}
+

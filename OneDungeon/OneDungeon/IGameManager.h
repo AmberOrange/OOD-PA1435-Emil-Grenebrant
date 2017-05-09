@@ -3,6 +3,7 @@
 #define IGAMEMANAGER_H
 
 #include <string>
+#include "IPlayer.h"
 
 class IGameManager
 {
