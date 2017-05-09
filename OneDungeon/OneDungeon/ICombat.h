@@ -11,8 +11,6 @@ public:
 	virtual ~ICombat() {};
 
 	void virtual initCombat(IPlayer* player, IMonster* enemy) = 0;
-	bool virtual attack() = 0;
-	bool virtual evade() = 0;
 };
 
 #endif

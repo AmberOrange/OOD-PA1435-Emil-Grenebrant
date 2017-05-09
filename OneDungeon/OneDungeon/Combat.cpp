@@ -44,7 +44,7 @@ Combat::~Combat()
 void Combat::initCombat(IPlayer* player, IMonster* enemy)
 {
 	bool playerDead = false;
-	bool playerEvaded = false;
+	bool playerEvadeResult = 0;
 
 	do
 	{
@@ -56,14 +56,14 @@ void Combat::initCombat(IPlayer* player, IMonster* enemy)
 			playerDead = attack(player, enemy);
 			break;
 		case 2:
-			playerEvaded = evade(player, enemy);
+			playerEvadeResult = evade(player, enemy);
 			break;
 		}
 
-		if (playerDead)
+		if (playerDead || playerEvadeResult == 1)
 			std::cout << "You died!" << std::endl;
 
-	} while (!playerDead && !playerEvaded);
+	} while (!playerDead && playerEvadeResult != 2 && playerEvadeResult != 1);
 }
 
 bool Combat::attack(IPlayer* player, IMonster* enemy)
@@ -81,10 +81,11 @@ bool Combat::attack(IPlayer* player, IMonster* enemy)
 	return playerDead;
 }
 
-bool Combat::evade(IPlayer* player, IMonster* enemy)
+int Combat::evade(IPlayer* player, IMonster* enemy)
 {
 	bool playerDead = false;
 	bool evaded = false;
+	int result = 0;
 
 	evaded = enemy->calcEvade(player->getEvadeValue());
 
@@ -93,5 +94,12 @@ bool Combat::evade(IPlayer* player, IMonster* enemy)
 	else
 		std::cout << "You evaded into the previous room!" << std::endl;
 
-	return playerDead;
+	if (!evaded && !playerDead)
+		result = 3;
+	else if (evaded)
+		result = 2;
+	else
+		result = 1;
+
+	return result;
 }
