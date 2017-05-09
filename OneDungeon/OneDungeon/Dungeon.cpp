@@ -1,0 +1,58 @@
+#include "Dungeon.h"
+
+Dungeon::Dungeon()
+{
+}
+
+Dungeon::~Dungeon()
+{
+	for (int i = 0; i < DUNGEON_WIDTH; i++)
+	{
+		delete this->rooms[i];
+	}
+	delete[] this->rooms;
+	this->rooms = nullptr;
+}
+
+Position Dungeon::generate()
+{
+	this->rooms = new IRoom*[DUNGEON_WIDTH];
+	for (int i = 0; i < DUNGEON_WIDTH; i++)
+	{
+		this->rooms[i] = new Room[DUNGEON_HEIGHT];
+		for (int j = 0; j < DUNGEON_HEIGHT; j++)
+		{
+			this->rooms[i][j].generate();
+		}
+	}
+	Position randPos =
+	{
+		std::rand() % DUNGEON_WIDTH,
+		std::rand() % DUNGEON_HEIGHT
+	};
+
+	return randPos;
+}
+
+void Dungeon::display()
+{
+}
+
+Position Dungeon::getRoomPosition(std::string direction, Position pos)
+{
+	return Position();
+}
+
+IMonster* Dungeon::getMonster(Position pos)
+{
+	return nullptr;
+}
+
+IItem* Dungeon::getLoot()
+{
+	return nullptr;
+}
+
+void Dungeon::setRoomLoot()
+{
+}
