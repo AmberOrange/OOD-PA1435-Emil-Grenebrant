@@ -2,6 +2,9 @@
 #ifndef IMONSTER_H
 #define IMONSTER_H
 
+#include <time.h>
+#include <cstdlib>
+
 class IMonster
 {
 public:
