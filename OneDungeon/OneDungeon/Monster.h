@@ -1,12 +1,9 @@
 #ifndef MONSTER_H
 #define MONSTER_H
-#define MONSTER_HP_MIN 100
-#define MONSTER_HP_MAX 500
-#define MONSTER_ATK_MIN 10
-#define MONSTER_ATK_MAX 50
 
 #include <cstdlib>
 #include "IMonster.h"
+#include "Global.h"
 
 class Monster : public IMonster
 {

@@ -155,6 +155,7 @@
   <ItemGroup>
     <ClInclude Include="Combat.h" />
     <ClInclude Include="Dungeon.h" />
+    <ClInclude Include="Global.h" />
     <ClInclude Include="Inventory.h" />
     <ClInclude Include="Item.h" />
     <ClInclude Include="Monster.h" />

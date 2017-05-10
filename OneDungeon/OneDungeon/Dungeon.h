@@ -1,11 +1,11 @@
 #ifndef DUNGEON_H
 #define DUNGEON_H
-#define DUNGEON_WIDTH 6
-#define DUNGEON_HEIGHT 6
+
 
 #include <cstdlib>
 #include "IDungeon.h"
 #include "Room.h"
+#include "Global.h"
 
 class Dungeon : public IDungeon
 {
