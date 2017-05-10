@@ -12,9 +12,8 @@ public:
 
 	void equip(std::string choice);
 	void getGear(std::string choice);
-	void use(std::string choice);
+	void use(std::string choice, int hp);
 	bool isItem(std::string choice);
-	void inventory();
 };
 
 #endif

@@ -11,10 +11,6 @@ Player::Player()
 }
 
 
-Player::~Player()
-{
-}
-
 void Player::create(Position startRoom)
 {
 	this->pos = startRoom;
@@ -50,10 +46,6 @@ void Player::setGear(IItem * item)
 bool Player::addLoot(IItem * item)
 {
 	return false;
-}
-
-void Player::inventory()
-{
 }
 
 Position Player::getPosition()

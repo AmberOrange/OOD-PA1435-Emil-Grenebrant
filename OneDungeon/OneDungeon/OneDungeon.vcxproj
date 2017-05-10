@@ -160,7 +160,6 @@
     <ClInclude Include="Global.h" />
     <ClInclude Include="Inventory.h" />
     <ClInclude Include="Item.h" />
-    <ClInclude Include="Monster.h" />
     <ClInclude Include="GameManager.h" />
     <ClInclude Include="Equipable.h" />
     <ClInclude Include="HPPot.h" />
