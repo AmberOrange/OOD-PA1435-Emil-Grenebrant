@@ -1,16 +1,16 @@
 #ifndef GAMEMANAGER_H
 #define GAMEMANAGER_H
 #include "IGameManager.h"
-#include "IDungeon.h"
-#include "IPlayer.h"
+#include "Dungeon.h"
+#include "Player.h"
 #include "ICombat.h"
 #include "Position.h"
 
 class GameManager : public IGameManager
 {
 private:
-	IDungeon* cave;
-	IPlayer* user;
+	Dungeon cave;
+	Player user;
 	ICombat* combat;
 
 public:

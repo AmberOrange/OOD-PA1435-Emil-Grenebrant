@@ -23,7 +23,6 @@ public:
 	bool inflictDamage(int attackValue);
 	void setGear(IItem* item);
 	bool addLoot(IItem* item);
-	void inventory();
 
 	Position getPosition();
 	Position setPosition(Position pos);

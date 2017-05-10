@@ -17,7 +17,6 @@ public:
 	virtual bool inflictDamage(int attackValue) = 0;
 	virtual void setGear(IItem* item) = 0;
 	virtual bool addLoot(IItem* item) = 0;
-	virtual void inventory() = 0;
 
 	virtual Position getPosition() = 0;
 	virtual Position setPosition(Position pos) = 0;

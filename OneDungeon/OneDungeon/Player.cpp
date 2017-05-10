@@ -37,10 +37,6 @@ bool Player::addLoot(IItem* item)
 	return false;
 }
 
-void Player::inventory()
-{
-}
-
 Position Player::getPosition()
 {
 	return Position();

@@ -10,7 +10,7 @@
 class Dungeon : public IDungeon
 {
 private:
-	IRoom** rooms;
+	Room** rooms;
 public:
 	Dungeon();
 	virtual ~Dungeon();

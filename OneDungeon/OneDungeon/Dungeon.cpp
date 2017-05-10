@@ -8,7 +8,7 @@ Dungeon::~Dungeon()
 {
 	for (int i = 0; i < DUNGEON_WIDTH; i++)
 	{
-		delete this->rooms[i];
+		delete[] this->rooms[i];
 	}
 	delete[] this->rooms;
 	this->rooms = nullptr;
@@ -16,7 +16,7 @@ Dungeon::~Dungeon()
 
 Position Dungeon::generate()
 {
-	this->rooms = new IRoom*[DUNGEON_WIDTH];
+	this->rooms = new Room*[DUNGEON_WIDTH];
 	for (int i = 0; i < DUNGEON_WIDTH; i++)
 	{
 		this->rooms[i] = new Room[DUNGEON_HEIGHT];
