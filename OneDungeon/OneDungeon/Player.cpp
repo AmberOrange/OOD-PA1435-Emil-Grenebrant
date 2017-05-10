@@ -10,7 +10,6 @@ void Player::create(Position startRoom)
 	this->hp = PLAYER_START_HP;
 	this->atkValue = PLAYER_BASE_ATK;
 	this->dead = false;
-	this->inventory = new Inventory();
 }
 
 int Player::getAttackValue()

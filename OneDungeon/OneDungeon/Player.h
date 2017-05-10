@@ -11,7 +11,7 @@ private:
 	int hp;
 	int atkValue;
 	bool dead;
-	IInventory* inventory;
+	Inventory inventory;
 	Position pos;
 public:
 	Player();
