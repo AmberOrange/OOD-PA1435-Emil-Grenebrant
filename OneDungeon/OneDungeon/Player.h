@@ -11,7 +11,6 @@ private:
 	int atkValue;
 	int evValue;
 	bool dead;
-	IInventory* inv;
 
 public:
 	Player();

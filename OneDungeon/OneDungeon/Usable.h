@@ -7,14 +7,13 @@
 class Usable : public IItem
 {
 private:
-
+	virtual void generate() = 0;
 
 public:
-	Usable();
 	virtual ~Usable();
 
-	virtual void generate();
-	virtual bool use(IItem* item);
+	virtual bool use(IItem** item) = 0;
+	virtual void display() = 0;
 };
 
 #endif

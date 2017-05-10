@@ -6,13 +6,17 @@
 
 class Weapon : public Equipable
 {
-	void generate();
+private:
+	virtual void generate() { this->value = rand() % 100 + 1; };
 
-	int atkValue;
-	
+	int value;
 public:
-	Weapon();
-	virtual ~Weapon();
+	Weapon() { generate(); };
+	virtual ~Weapon() {};
+
+	virtual bool use(IItem** item, int& hp) { item[WEAPON] = this; };
+	virtual void display() { std::cout << "Weapon " << std::to_string(value) << std::endl; };
+	virtual int getStatValue() { return this->value; };
 };
 
 #endif
