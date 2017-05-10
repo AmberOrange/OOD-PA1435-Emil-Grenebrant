@@ -1,4 +1,3 @@
-#pragma once
 #ifndef IITEM_H
 #define IITEM_H
 #define ITEM_ARMOR_DR 20

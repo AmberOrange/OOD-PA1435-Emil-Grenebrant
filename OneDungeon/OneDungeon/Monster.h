@@ -2,7 +2,9 @@
 #ifndef MONSTER_H
 #define MONSTER_H
 
+#include <cstdlib>
 #include "IMonster.h"
+#include "Global.h"
 
 class Monster : public IMonster
 {

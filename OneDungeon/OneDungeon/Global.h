@@ -1,0 +1,12 @@
+#ifndef GLOBAL_H
+#define GLOBAL_H
+
+#define DUNGEON_WIDTH 6
+#define DUNGEON_HEIGHT 6
+
+#define MONSTER_HP_MIN 100
+#define MONSTER_HP_MAX 500
+#define MONSTER_ATK_MIN 10
+#define MONSTER_ATK_MAX 50
+
+#endif

@@ -1,15 +1,13 @@
 #include <iostream>
-
-using namespace std;
+#include "GameManager.h"
 
 int main()
 {
-	cout << "Hello!" << endl;
-	cout << "A change has occured!" << endl;
+	GameManager gameManager;
+	gameManager.startGame();
 
-	cout << "Samurhaj är en haj!" << endl;
 
-	cin.ignore();
+	std::cin.ignore();
 
 	return 0;
 }

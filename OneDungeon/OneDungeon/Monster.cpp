@@ -15,9 +15,6 @@ Monster::~Monster()
 {
 }
 
-void Monster::generate()
-{
-}
 
 int Monster::getAttackValue()
 {
@@ -46,4 +43,11 @@ bool Monster::calcEvade(int evadeValue)
 		evaded = true;
 
 	return evaded;
+}
+
+void Monster::generate()
+{
+	this->hp = std::rand() % (MONSTER_HP_MAX - MONSTER_HP_MIN) + MONSTER_HP_MIN;
+	this->atkValue = std::rand() % (MONSTER_ATK_MAX - MONSTER_ATK_MIN) + MONSTER_ATK_MIN;
+	this->dead = false;
 }

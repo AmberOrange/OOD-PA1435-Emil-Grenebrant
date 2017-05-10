@@ -17,6 +17,10 @@ Player::~Player()
 
 void Player::create(Position startRoom)
 {
+	this->pos = startRoom;
+	this->hp = PLAYER_START_HP;
+	this->atkValue = PLAYER_BASE_ATK;
+	this->dead = false;
 }
 
 int Player::getAttackValue()

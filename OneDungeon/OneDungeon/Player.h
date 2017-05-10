@@ -1,32 +1,32 @@
-#pragma once
 #ifndef PLAYER_H
 #define PLAYER_H
-
+#define PLAYER_START_HP 500
+#define PLAYER_BASE_ATK 100
 #include "IPlayer.h"
+#include "Inventory.h"
 
-class Player
+class Player : public IPlayer
 {
 private:
 	int hp;
 	int atkValue;
 	int evValue;
 	bool dead;
-
+	Inventory inventory;
+	Position pos;
 public:
 	Player();
-	virtual ~Player();
 
-	virtual void create(Position startRoom);
+	void create(Position startRoom);
 
-	virtual int getAttackValue();
-	virtual int getEvadeValue();
-	virtual bool inflictDamage(int attackValue);
-	virtual void setGear(IItem* item);
-	virtual bool addLoot(IItem* item);
-	virtual void inventory();
+	int getAttackValue();
+	int getEvadeValue();
+	bool inflictDamage(int attackValue);
+	void setGear(IItem* item);
+	bool addLoot(IItem* item);
 
-	virtual Position getPosition();
-	virtual Position setPosition(Position pos);
+	Position getPosition();
+	Position setPosition(Position pos);
 };
 
 #endif
