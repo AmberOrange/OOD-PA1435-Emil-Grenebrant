@@ -8,7 +8,7 @@ public:
 	virtual ~IItem() {};
 
 	virtual void generate() = 0;
-	virtual bool use(Player* player) = 0;
+	virtual bool use(IItem* item) = 0;
 };
 
 #endif
