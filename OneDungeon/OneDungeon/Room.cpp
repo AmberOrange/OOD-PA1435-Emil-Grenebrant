@@ -6,7 +6,7 @@ Room::Room()
 
 Room::~Room()
 {
-
+	delete this->enemy;
 }
 
 void Room::generate()
