@@ -11,12 +11,13 @@ class IInventory
 public:
 	virtual ~IInventory() {};
 
-	virtual void equip(std::string choice) = 0;		 
-	virtual IItem* getGear(std::string choice) = 0;	// Returned void, now returns IItem* 
-	virtual void use(std::string choice) = 0;
-	virtual bool isItem(std::string choice) = 0;
-	virtual void inventory() = 0;
-	virtual std::string getPlayerChoice() = 0;		// Added
+	// getItem()	- retrieves item
+	//	gear		- string with item name
+	//	offset		- int with offset where name starts
+	virtual IItem* getItem(const std::string gear, const int offset) = 0;
+	
+	// display()	- display all items in inventory
+	virtual void display() = 0;
 };
 
 #endif
