@@ -31,6 +31,8 @@ Position Dungeon::generate()
 		std::rand() % DUNGEON_HEIGHT
 	};
 
+	this->rooms[randPos.x][randPos.y].setEnemyAlive(false);
+
 	return randPos;
 }
 

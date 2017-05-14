@@ -32,6 +32,7 @@ void GameManager::move(std::string direction)
 		else
 		{
 			std::cout << "The tunnel was a dead end." << std::endl;
+			currentPos.y -= 1;
 		}
 	}
 	else if (direction == "west" || direction == "West")
@@ -44,6 +45,7 @@ void GameManager::move(std::string direction)
 		else
 		{
 			std::cout << "The tunnel was a dead end." << std::endl;
+			currentPos.x += 1;
 		}
 	}
 	else if (direction == "south" || direction == "South")
@@ -56,6 +58,7 @@ void GameManager::move(std::string direction)
 		else
 		{
 			std::cout << "The tunnel was a dead end." << std::endl;
+			currentPos.y += 1;
 		}
 	}
 	else if (direction == "east" || direction == "East")
@@ -68,6 +71,7 @@ void GameManager::move(std::string direction)
 		else
 		{
 			std::cout << "The tunnel was a dead end." << std::endl;
+			currentPos.x -= 1;
 		}
 	}
 	else
@@ -99,4 +103,9 @@ void GameManager::loot()
 bool GameManager::isPlayerDead()
 {
 	return this->user.isPlayerDead();
+}
+
+void GameManager::openUserInventory()
+{
+	this->user.openInventory();
 }

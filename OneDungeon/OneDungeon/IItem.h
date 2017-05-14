@@ -15,7 +15,6 @@ class IItem
 public:
 	virtual ~IItem() {};
 
-	virtual bool use(IItem** item, int& hp) = 0;
 	virtual void display() = 0;
 	virtual std::string getString() = 0;
 	virtual ITEM getItemType() = 0;
