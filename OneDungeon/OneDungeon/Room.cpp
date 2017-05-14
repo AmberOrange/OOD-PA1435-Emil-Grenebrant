@@ -39,5 +39,12 @@ void Room::getRoomLoot()
 
 IMonster* Room::getMonster()
 {
-	return this->enemy;
+	if (this->enemyAlive == true)
+	{
+		return this->enemy;
+	}
+	else 
+	{
+		return nullptr;
+	}
 }
