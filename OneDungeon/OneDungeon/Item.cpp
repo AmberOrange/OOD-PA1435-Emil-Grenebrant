@@ -12,7 +12,7 @@ Item::Item()
 	this->power = 0;
 	this->name = "test";
 	this->slotNum = 0;
-	this->type = ITEM::HPPOT;	// Default (currently a number)
+	this->type = ITEM::HPPOT;
 }
 
 std::string Item::getString()
@@ -34,6 +34,7 @@ void Item::display()
 {
 	std::cout << "Name:		" << this->name << std::endl;
 	std::cout << "Power:		" << this->power << std::endl;
+
 	switch (this->type)
 	{
 	case ITEM::ARMOR:
