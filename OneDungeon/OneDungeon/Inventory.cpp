@@ -11,8 +11,11 @@ Inventory::~Inventory()
 
 void Inventory::addItem(Item* _item)
 {
-	Item* temp = new Item(*_item);
-	this->items.push_back(temp);
+	if (_item)	// if item is not nullptr
+	{
+		Item* temp = new Item(*_item);
+		this->items.push_back(temp);
+	}
 }
 
 void Inventory::display()

@@ -5,7 +5,7 @@ Item::Item()
 	this->power = 0;
 	this->name = "test";
 	this->slotNum = 0;
-	this->type = ITEM::ARMOR;	// Default armor
+	this->type = ITEM::WEAPON;	// Default armor (currently a number)
 }
 
 std::string Item::getString()
