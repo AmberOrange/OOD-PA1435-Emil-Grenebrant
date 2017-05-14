@@ -51,6 +51,7 @@ void Player::setGear(IItem * item)
 
 void Player::useItem(IItem* item)
 {
+	int increase = 0;
 	switch (item->getItemType())
 	{
 
@@ -65,8 +66,17 @@ void Player::useItem(IItem* item)
 		break;
 
 	case ITEM::HPPOT:
-		this->hp += item->getPower();
-		std::cout << "Health value increased by " << item->getPower() << " to " << this->hp << std::endl;
+		increase = item->getPower();
+		if (PLAYER_START_HP < (this->hp + item->getPower()))
+		{
+			increase = PLAYER_START_HP - this->hp;
+			this->hp = PLAYER_START_HP;
+		}
+		else
+			this->hp += item->getPower();
+
+		std::cout << "Health value increased by " << increase << " to " << this->hp << std::endl;
+		this->inventory.removeItem(item);
 		break;
 
 	default:
@@ -128,8 +138,10 @@ void Player::openInventory()
 				std::cin >> choice;
 				item = this->inventory.getItem(choice);
 
-				if(item)
+				if (item)
+				{
 					this->useItem(item);
+				}
 
 				exit = true;
 			}

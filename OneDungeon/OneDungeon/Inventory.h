@@ -16,6 +16,7 @@ public:
 	void display();
 	bool hasItems();
 	void addItem(Item* _item);
+	void removeItem(IItem* _item);
 
 private:
 	std::vector<IItem*> items;
