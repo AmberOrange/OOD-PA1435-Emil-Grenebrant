@@ -13,6 +13,15 @@ void Room::generate()
 {
 	this->enemy = new Monster();
 	this->enemy->generate();
+	
+	if (this->enemy != nullptr)
+	{
+		this->enemyAlive = true;
+	}
+	else
+	{
+		this->enemyAlive = false;
+	}
 }
 
 void Room::print()
@@ -28,7 +37,7 @@ void Room::getRoomLoot()
 {
 }
 
-IMonster* Room::getMonster(int pos)
+IMonster* Room::getMonster()
 {
-	return nullptr;
+	return this->enemy;
 }

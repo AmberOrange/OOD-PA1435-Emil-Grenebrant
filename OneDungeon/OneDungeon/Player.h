@@ -24,9 +24,10 @@ public:
 	bool inflictDamage(int attackValue);
 	void setGear(IItem* item);
 	bool addLoot(IItem* item);
+	bool isPlayerDead();
 
 	Position getPosition();
-	Position setPosition(Position pos);
+	void setPosition(Position pos);
 };
 
 #endif

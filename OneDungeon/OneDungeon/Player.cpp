@@ -48,12 +48,17 @@ bool Player::addLoot(IItem * item)
 	return false;
 }
 
-Position Player::getPosition()
+bool Player::isPlayerDead()
 {
-	return Position();
+	return this->dead;
 }
 
-Position Player::setPosition(Position pos)
+Position Player::getPosition()
 {
-	return Position();
+	return this->pos;
+}
+
+void Player::setPosition(Position pos)
+{
+	this->pos = pos;
 }

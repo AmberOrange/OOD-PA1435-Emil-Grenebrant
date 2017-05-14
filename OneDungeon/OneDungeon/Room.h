@@ -7,6 +7,7 @@ class Room : public IRoom
 {
 private:
 	IMonster* enemy;
+	bool enemyAlive;
 	IItem* item;
 	bool looted;
 	Position position;
@@ -18,7 +19,7 @@ public:
 	void print();
 	IItem* getLoot();
 	void getRoomLoot();
-	IMonster* getMonster(int pos);
+	IMonster* getMonster();
 };
 
 #endif

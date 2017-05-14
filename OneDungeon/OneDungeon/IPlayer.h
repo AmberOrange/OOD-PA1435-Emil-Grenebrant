@@ -17,9 +17,10 @@ public:
 	virtual bool inflictDamage(int attackValue) = 0;
 	virtual void setGear(IItem* item) = 0;
 	virtual bool addLoot(IItem* item) = 0;
+	virtual bool isPlayerDead() = 0;
 
 	virtual Position getPosition() = 0;
-	virtual Position setPosition(Position pos) = 0;
+	virtual void setPosition(Position pos) = 0;
 };
 
 #endif
