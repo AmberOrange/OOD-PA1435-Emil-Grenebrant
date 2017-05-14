@@ -140,7 +140,7 @@ void Player::openInventory()
 	std::cout << "You are now leaving inventory!" << std::endl;
 }
 
-Inventory Player::getInventory()
+Inventory& Player::getInventory()
 {
 	return this->inventory;
 }

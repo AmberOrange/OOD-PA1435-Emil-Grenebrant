@@ -97,7 +97,14 @@ void GameManager::move(std::string direction)
 
 void GameManager::loot()
 {
-
+	IItem* item = this->cave.getLoot(this->user.getPosition());
+	if (item == nullptr)
+		std::cout << "There's nothing to be looted" << std::endl;
+	else
+	{
+		this->user.addLoot(item);
+		std::cout << "Added " << item->getString() << " to the inventory!" << std::endl;
+	}
 }
 
 bool GameManager::isPlayerDead()

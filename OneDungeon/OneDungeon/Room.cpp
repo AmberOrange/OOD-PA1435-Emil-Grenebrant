@@ -29,7 +29,7 @@ void Room::generate()
 	{
 		this->enemyAlive = false;
 	}
-	random = std::rand() % 200;
+	random = std::rand() % 100;
 
 	if (random < 60)
 		this->item = new Item("Potion of Health", 100, ITEM::HPPOT, 0);
@@ -52,7 +52,9 @@ void Room::setEnemyAlive(bool value)
 
 IItem* Room::getLoot()
 {
-	return item;
+	IItem* ret = this->item;
+	this->item = nullptr;
+	return ret;
 }
 
 void Room::getRoomLoot()

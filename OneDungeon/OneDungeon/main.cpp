@@ -30,6 +30,10 @@ int main()
 		{
 			gameManager.openUserInventory();
 		}
+		else if (userInput == "Loot" || userInput == "loot")
+		{
+			gameManager.loot();
+		}
 		else if(userInput != "exit")
 		{
 			std::cout << "Invalide input" << std::endl;
