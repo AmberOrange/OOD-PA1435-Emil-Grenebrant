@@ -25,7 +25,7 @@ void GameManager::move(std::string direction)
 	if (direction == "north" || direction == "North")
 	{
 		currentPos.y += 1;
-		if ( currentPos.y <= DUNGEON_HEIGHT )
+		if ( currentPos.y <= DUNGEON_HEIGHT - 1 )
 		{
 			user.setPosition(currentPos);
 		}
@@ -64,7 +64,7 @@ void GameManager::move(std::string direction)
 	else if (direction == "east" || direction == "East")
 	{
 		currentPos.x += 1;
-		if ( currentPos.x <= DUNGEON_WIDTH )
+		if ( currentPos.x <= DUNGEON_WIDTH - 1 )
 		{
 			user.setPosition(currentPos);
 		}
@@ -79,8 +79,8 @@ void GameManager::move(std::string direction)
 		std::cout << "Invalid input" << std::endl;
 	}
 
-	if (currentPos.x >= 0 && currentPos.x <= DUNGEON_WIDTH &&
-		currentPos.y >= 0 && currentPos.y <= DUNGEON_HEIGHT)
+	if (currentPos.x >= 0 && currentPos.x <= (DUNGEON_WIDTH - 1) &&
+		currentPos.y >= 0 && currentPos.y <= (DUNGEON_HEIGHT - 1))
 	{
 		enemy = cave.getMonster(currentPos);
 
