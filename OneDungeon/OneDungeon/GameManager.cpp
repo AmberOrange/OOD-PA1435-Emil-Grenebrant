@@ -100,3 +100,8 @@ bool GameManager::isPlayerDead()
 {
 	return this->user.isPlayerDead();
 }
+
+void GameManager::openUserInventory()
+{
+	this->user.openInventory();
+}

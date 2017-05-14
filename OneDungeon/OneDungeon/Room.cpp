@@ -2,6 +2,7 @@
 
 Room::Room()
 {
+	this->item = nullptr;
 }
 
 Room::~Room()
@@ -30,7 +31,7 @@ void Room::print()
 
 IItem* Room::getLoot()
 {
-	return nullptr;
+	return item;
 }
 
 void Room::getRoomLoot()

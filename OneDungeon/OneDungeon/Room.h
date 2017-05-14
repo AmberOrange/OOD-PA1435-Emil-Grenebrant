@@ -11,6 +11,7 @@ private:
 	IItem* item;
 	bool looted;
 	Position position;
+
 public:
 	Room();
 	virtual ~Room();

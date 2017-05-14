@@ -13,6 +13,7 @@ private:
 	ITEM type;
 public:
 	Item();
+	void display();
 	std::string getString();
 	ITEM getItemType();
 	int getPower();

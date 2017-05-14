@@ -23,5 +23,6 @@ public:
 	void move(std::string direction);
 	void loot();
 	bool isPlayerDead();
+	void openUserInventory();
 };
 #endif

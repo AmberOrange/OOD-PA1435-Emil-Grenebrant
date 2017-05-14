@@ -50,15 +50,18 @@ void Player::useItem(IItem* item)
 	{
 
 	case ITEM::ARMOR:
+		std::cout << "Defense value changed: " << item->getPower() - this->defValue << std::endl;
 		this->defValue = item->getPower();
 			break;
 
 	case ITEM::WEAPON:
+		std::cout << "Attack value changed: " << item->getPower() - this->defValue << std::endl;
 		this->atkValue = item->getPower();
 		break;
 
 	case ITEM::HPPOT:
 		this->hp += item->getPower();
+		std::cout << "Health value increased: " << this->hp << std::endl;
 		break;
 
 	default:
@@ -88,32 +91,47 @@ void Player::setPosition(Position pos)
 
 void Player::openInventory()
 {
-	std::string choice;
+	bool exit = false;
+	Item item;
+	this->inventory.addItem(&item);
+	this->inventory.addItem(&item);
 
-	this->inventory.display();
+	if (this->inventory.hasItems())
+	{
+		std::cout << "Your inventory was opened and contains:" << std::endl << std::endl;
+		std::string choice;
 
-	do {
-		// Get player input
-		std::cout << "What would you like to do?" << std::endl;
+		this->inventory.display();
+
 
 		do {
-			std::cin >> choice;
-		} while (choice.find("Equip") == std::string::npos || choice.find("Use") == std::string::npos || choice.find("Exit") == std::string::npos);
+			// Get player input
+			std::cout << "What would you like to do?" << std::endl;
 
+			do {
+				std::cin >> choice;
+			} while (choice != "use" && choice != "exit");
 
-		// Equip
-		if (choice.find("Equip") != std::string::npos)
-		{
-			IItem* item = this->inventory.getItem(choice, 7);
-			this->useItem(item);
-		}
+			// Use
+			if (choice == "use")
+			{
+				std::cout << "Which item do you want to use?" << std::endl;
+				
+				IItem* item;
 
-		// Use
-		else if (choice.find("Use") != std::string::npos)
-		{
-			IItem* item = this->inventory.getItem(choice, 5);
-			this->useItem(item);
-		}
+				do {
+					std::cin >> choice;
+					item = this->inventory.getItem(choice);
+				} while (item == nullptr && choice != "exit");
 
-	} while (choice.find("Exit") == std::string::npos);	// Exit inventory
+				this->useItem(item);
+				exit = true;
+			}
+
+		} while (choice != "exit" && !exit);	// Exit inventory
+	}
+	else
+		std::cout << "You have no items!" << std::endl << std::endl;
+
+	std::cout << "You are now leaving inventory!" << std::endl;
 }

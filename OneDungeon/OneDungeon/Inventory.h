@@ -3,6 +3,7 @@
 
 #include "IInventory.h"
 #include "IPlayer.h"
+#include "Item.h"
 #include <vector>
 
 class Inventory : public IInventory
@@ -11,8 +12,10 @@ public:
 	Inventory();
 	~Inventory();
 
-	IItem* getItem(std::string choice, int start);
+	IItem* getItem(const std::string gear);
 	void display();
+	bool hasItems();
+	void addItem(Item* _item);
 
 private:
 	std::vector<IItem*> items;
