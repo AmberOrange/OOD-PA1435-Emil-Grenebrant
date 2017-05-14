@@ -55,18 +55,18 @@ void Player::useItem(IItem* item)
 	{
 
 	case ITEM::ARMOR:
-		std::cout << "Defense value changed: " << item->getPower() - this->defValue << std::endl;
+		std::cout << "Defense value changed by " << item->getPower() - this->defValue << " to " << item->getPower() << std::endl;
 		this->defValue = item->getPower();
 			break;
 
 	case ITEM::WEAPON:
-		std::cout << "Attack value changed: " << item->getPower() - this->defValue << std::endl;
+		std::cout << "Attack value changed by " << item->getPower() - this->atkValue << " to " << item->getPower() << std::endl;
 		this->atkValue = item->getPower();
 		break;
 
 	case ITEM::HPPOT:
 		this->hp += item->getPower();
-		std::cout << "Health value increased: " << this->hp << std::endl;
+		std::cout << "Health value increased by " << item->getPower() << " to " << this->hp << std::endl;
 		break;
 
 	default:
