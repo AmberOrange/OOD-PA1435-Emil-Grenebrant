@@ -32,11 +32,11 @@ void Room::generate()
 	random = std::rand() % 100;
 
 	if (random < 60)
-		this->item = new Item("Potion of Health", 100, ITEM::HPPOT, 0);
+		this->item = new Item("Potion", 100, ITEM::HPPOT, 0);
 	else if (random < 80)
-		this->item = new Item("Sword of a Thousand Truths", 50, ITEM::WEAPON, 0);
+		this->item = new Item("Sword", 50, ITEM::WEAPON, 0);
 	else if (random < 100)
-		this->item = new Item("Super strong Armor", 80, ITEM::ARMOR, 0);
+		this->item = new Item("Armor", 80, ITEM::ARMOR, 0);
 	else
 		this->item = nullptr;
 }
