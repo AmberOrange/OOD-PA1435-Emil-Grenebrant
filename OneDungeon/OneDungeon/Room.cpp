@@ -29,14 +29,14 @@ void Room::generate()
 	{
 		this->enemyDead = true;
 	}
-	random = std::rand() % 200;
+	random = std::rand() % 100;
 
 	if (random < 60)
-		this->item = new Item("Potion of Health", 100, ITEM::HPPOT, 0);
+		this->item = new Item("Potion", 100, ITEM::HPPOT, 0);
 	else if (random < 80)
-		this->item = new Item("Sword of a Thousand Truths", 50, ITEM::WEAPON, 0);
+		this->item = new Item("Sword", 50, ITEM::WEAPON, 0);
 	else if (random < 100)
-		this->item = new Item("Super strong Armor", 80, ITEM::ARMOR, 0);
+		this->item = new Item("Armor", 80, ITEM::ARMOR, 0);
 	else
 		this->item = nullptr;
 }
@@ -50,9 +50,11 @@ void Room::setEnemyAlive(bool value)
 	this->enemyDead = value;
 }
 
-IItem* Room::getLoot()
+Item* Room::getLoot()
 {
-	return item;
+	Item* ret = this->item;
+	this->item = nullptr;
+	return ret;
 }
 
 void Room::getRoomLoot()

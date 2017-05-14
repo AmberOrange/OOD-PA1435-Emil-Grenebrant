@@ -19,7 +19,7 @@ public:
 
 	void generate();
 	void print();
-	IItem* getLoot();
+	Item* getLoot();
 	void getRoomLoot();
 	IMonster* getMonster();
 	void setEnemyAlive(bool value);

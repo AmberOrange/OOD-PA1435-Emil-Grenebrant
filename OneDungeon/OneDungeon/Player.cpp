@@ -35,7 +35,7 @@ bool Player::inflictDamage(int attackValue)
 	this->hp -= attackValue;
 
 	if (hp <= 0)
-		this->dead = false;
+		this->dead = true;
 
 	std::cout << "\nThe monster bit you for " << attackValue << " damage!" << std::endl;
 
@@ -55,18 +55,18 @@ void Player::useItem(IItem* item)
 	{
 
 	case ITEM::ARMOR:
-		std::cout << "Defense value changed: " << item->getPower() - this->defValue << std::endl;
+		std::cout << "Defense value changed by " << item->getPower() - this->defValue << " to " << item->getPower() << std::endl;
 		this->defValue = item->getPower();
 			break;
 
 	case ITEM::WEAPON:
-		std::cout << "Attack value changed: " << item->getPower() - this->defValue << std::endl;
+		std::cout << "Attack value changed by " << item->getPower() - this->atkValue << " to " << item->getPower() << std::endl;
 		this->atkValue = item->getPower();
 		break;
 
 	case ITEM::HPPOT:
 		this->hp += item->getPower();
-		std::cout << "Health value increased: " << this->hp << std::endl;
+		std::cout << "Health value increased by " << item->getPower() << " to " << this->hp << std::endl;
 		break;
 
 	default:
@@ -128,7 +128,9 @@ void Player::openInventory()
 				std::cin >> choice;
 				item = this->inventory.getItem(choice);
 
-				this->useItem(item);
+				if(item)
+					this->useItem(item);
+
 				exit = true;
 			}
 
@@ -140,7 +142,7 @@ void Player::openInventory()
 	std::cout << "You are now leaving inventory!" << std::endl;
 }
 
-Inventory Player::getInventory()
+Inventory& Player::getInventory()
 {
 	return this->inventory;
 }
