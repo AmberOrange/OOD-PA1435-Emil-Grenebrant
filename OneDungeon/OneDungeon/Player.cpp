@@ -37,6 +37,11 @@ bool Player::inflictDamage(int attackValue)
 	if (hp <= 0)
 		this->dead = false;
 
+	std::cout << "\nThe monster bit you for " << attackValue << " damage!" << std::endl;
+
+	if (this->dead)
+		std::cout << "\nYou died!" << std::endl;
+
 	return dead;
 }
 
@@ -64,6 +69,11 @@ void Player::useItem(IItem* item)
 	default:
 			break;
 	}
+}
+
+void Player::displayHealth()
+{
+	std::cout << "\nPlayer health: " << this->hp << std::endl;
 }
 
 bool Player::addLoot(IItem * item)

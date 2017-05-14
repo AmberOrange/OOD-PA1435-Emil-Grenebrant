@@ -10,7 +10,7 @@ class ICombat
 public:
 	virtual ~ICombat() {};
 
-	void virtual initCombat(IPlayer* player, IMonster* enemy) = 0;
+	bool virtual initCombat(IPlayer* player, IMonster* enemy) = 0;
 };
 
 #endif

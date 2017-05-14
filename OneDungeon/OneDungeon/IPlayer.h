@@ -4,6 +4,7 @@
 
 #include "IInventory.h"
 #include "Position.h"
+#include <iostream>
 
 class IPlayer
 {
@@ -18,6 +19,7 @@ public:
 	virtual void setGear(IItem* item) = 0;
 	virtual bool addLoot(IItem* item) = 0;
 	virtual bool isPlayerDead() = 0;
+	virtual void displayHealth() = 0;
 
 	virtual Position getPosition() = 0;
 	virtual void setPosition(Position pos) = 0;

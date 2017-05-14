@@ -22,6 +22,7 @@ public:
 	virtual int getAttackValue();
 	virtual bool inflictDamage(int attackValue);
 	virtual bool calcEvade(int evadeValue);
+	virtual void displayHealth();
 };
 
 #endif
