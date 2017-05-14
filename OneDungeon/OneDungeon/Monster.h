@@ -16,13 +16,15 @@ private:
 
 public:
 	Monster();
-	virtual ~Monster();
+	~Monster();
 
-	virtual void generate();
-	virtual int getAttackValue();
-	virtual bool inflictDamage(int attackValue);
-	virtual bool calcEvade(int evadeValue);
-	virtual void displayHealth();
+	void generate();
+	int getAttackValue();
+	bool inflictDamage(int attackValue);
+	bool calcEvade(int evadeValue);
+	void displayHealth();
+	bool isMonsterDead();
+	
 };
 
 #endif

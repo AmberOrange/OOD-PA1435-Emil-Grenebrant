@@ -58,3 +58,8 @@ void Monster::generate()
 	this->atkValue = std::rand() % (MONSTER_ATK_MAX - MONSTER_ATK_MIN) + MONSTER_ATK_MIN;
 	this->dead = false;
 }
+
+bool Monster::isMonsterDead()
+{
+	return this->dead;
+}

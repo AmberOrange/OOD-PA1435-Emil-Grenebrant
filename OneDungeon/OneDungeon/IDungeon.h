@@ -18,6 +18,8 @@ public:
 	virtual IMonster* getMonster(Position pos) = 0;
 	virtual IItem* getLoot(Position pos) = 0;
 	virtual void setRoomLoot() = 0;
+	virtual bool isMonsterDead(Position pos) = 0;
+	virtual void setMonsterDead(Position pos) = 0;
 };
 
 #endif

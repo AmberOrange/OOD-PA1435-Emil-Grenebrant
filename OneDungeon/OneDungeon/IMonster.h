@@ -16,6 +16,7 @@ public:
 	virtual bool inflictDamage(int attackValue) = 0;
 	virtual bool calcEvade(int evadeValue) = 0;
 	virtual void displayHealth() = 0;
+	virtual bool isMonsterDead() = 0;
 };
 
 #endif

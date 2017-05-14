@@ -34,6 +34,7 @@ public:
 
 	virtual Position getPosition();
 	virtual void setPosition(Position pos);
+	void setPlayerDead();
 };
 
 #endif
