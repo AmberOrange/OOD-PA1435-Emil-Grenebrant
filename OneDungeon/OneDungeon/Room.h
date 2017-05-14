@@ -7,9 +7,9 @@
 class Room : public IRoom
 {
 private:
-	IMonster* enemy;
+	Monster* enemy;
 	bool enemyDead;
-	IItem* item;
+	Item* item;
 	bool looted;
 	Position position;
 
