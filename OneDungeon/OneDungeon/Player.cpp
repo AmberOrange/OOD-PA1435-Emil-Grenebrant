@@ -35,7 +35,7 @@ bool Player::inflictDamage(int attackValue)
 	this->hp -= attackValue;
 
 	if (hp <= 0)
-		this->dead = false;
+		this->dead = true;
 
 	std::cout << "\nThe monster bit you for " << attackValue << " damage!" << std::endl;
 
@@ -128,7 +128,9 @@ void Player::openInventory()
 				std::cin >> choice;
 				item = this->inventory.getItem(choice);
 
-				this->useItem(item);
+				if(item)
+					this->useItem(item);
+
 				exit = true;
 			}
 
