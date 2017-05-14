@@ -23,6 +23,7 @@ public:
 
 	virtual Position getPosition() = 0;
 	virtual void setPosition(Position pos) = 0;
+	virtual void setPlayerDead() = 0;
 };
 
 #endif

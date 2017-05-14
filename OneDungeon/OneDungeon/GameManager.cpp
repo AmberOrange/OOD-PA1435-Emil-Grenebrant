@@ -19,6 +19,7 @@ void GameManager::checkMap()
 void GameManager::move(std::string direction)
 {
 	Position currentPos;
+	Position previousPos = user.getPosition();
 	IMonster* enemy;
 	currentPos = user.getPosition();
 
@@ -87,6 +88,14 @@ void GameManager::move(std::string direction)
 		if (enemy != nullptr)
 		{
 			combat.initCombat(&this->user, enemy);
+			if (this->cave.isMonsterDead(currentPos) == true) 
+			{
+				this->cave.setMonsterDead(currentPos);
+			}
+			if (this->user.isPlayerDead() == true)
+			{
+				this->user.setPlayerDead();
+			}
 		}
 		else
 		{

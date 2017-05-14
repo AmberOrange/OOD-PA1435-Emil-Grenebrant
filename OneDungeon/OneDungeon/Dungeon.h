@@ -21,6 +21,8 @@ public:
 	IMonster* getMonster(Position pos);
 	IItem* getLoot();
 	void setRoomLoot();
+	bool isMonsterDead(Position pos);
+	void setMonsterDead(Position pos);
 };
 
 #endif

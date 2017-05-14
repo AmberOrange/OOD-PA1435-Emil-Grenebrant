@@ -16,6 +16,7 @@ public:
 	virtual IItem* getLoot() = 0;
 	virtual void getRoomLoot() = 0;
 	virtual IMonster* getMonster() = 0;
+	virtual bool isMonsterDead() = 0;
 };
 
 #endif

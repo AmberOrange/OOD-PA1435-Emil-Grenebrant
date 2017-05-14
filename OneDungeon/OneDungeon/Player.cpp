@@ -144,3 +144,8 @@ Inventory Player::getInventory()
 {
 	return this->inventory;
 }
+
+void Player::setPlayerDead()
+{
+	this->dead = true;
+}

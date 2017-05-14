@@ -58,3 +58,13 @@ IItem* Dungeon::getLoot()
 void Dungeon::setRoomLoot()
 {
 }
+
+bool Dungeon::isMonsterDead(Position pos)
+{
+	return this->rooms[pos.x][pos.y].isMonsterDead();
+}
+
+void Dungeon::setMonsterDead(Position pos)
+{
+	this->rooms[pos.x][pos.y].setEnemyAlive(false);
+}
