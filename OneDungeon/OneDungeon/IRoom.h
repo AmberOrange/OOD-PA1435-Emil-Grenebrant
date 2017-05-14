@@ -15,7 +15,7 @@ public:
 	virtual void print() = 0;
 	virtual IItem* getLoot() = 0;
 	virtual void getRoomLoot() = 0;
-	virtual IMonster* getMonster(int pos) = 0;
+	virtual IMonster* getMonster() = 0;
 };
 
 #endif

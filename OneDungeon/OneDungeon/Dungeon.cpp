@@ -45,7 +45,7 @@ Position Dungeon::getRoomPosition(std::string direction, Position pos)
 
 IMonster* Dungeon::getMonster(Position pos)
 {
-	return nullptr;
+	return rooms[pos.x][pos.y].getMonster();
 }
 
 IItem* Dungeon::getLoot()

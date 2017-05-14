@@ -71,14 +71,51 @@ bool Player::addLoot(IItem * item)
 	return false;
 }
 
-Position Player::getPosition()
+bool Player::isPlayerDead()
 {
-	return Position();
+	return this->dead;
 }
 
-Position Player::setPosition(Position pos)
+Position Player::getPosition()
 {
-	return Position();
+	return this->pos;
+}
+
+void Player::setPosition(Position pos)
+{
+	this->pos = pos;
+}
+
+void Player::openInventory()
+{
+	std::string choice;
+
+	this->inventory.display();
+
+	do {
+		// Get player input
+		std::cout << "What would you like to do?" << std::endl;
+
+		do {
+			std::cin >> choice;
+		} while (choice.find("Equip") == std::string::npos || choice.find("Use") == std::string::npos || choice.find("Exit") == std::string::npos);
+
+
+		// Equip
+		if (choice.find("Equip") != std::string::npos)
+		{
+			IItem* item = this->inventory.getItem(choice, 7);
+			this->useItem(item);
+		}
+
+		// Use
+		else if (choice.find("Use") != std::string::npos)
+		{
+			IItem* item = this->inventory.getItem(choice, 5);
+			this->useItem(item);
+		}
+
+	} while (choice.find("Exit") == std::string::npos);	// Exit inventory
 }
 
 void Player::openInventory()

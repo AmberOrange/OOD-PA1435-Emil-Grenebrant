@@ -14,6 +14,7 @@ public:
 	virtual void checkMap() = 0;
 	virtual void move(std::string direction) = 0;
 	virtual void loot() = 0;
+	virtual bool isPlayerDead() = 0;
 };
 
 #endif
