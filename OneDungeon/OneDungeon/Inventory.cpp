@@ -3,9 +3,6 @@
 
 Inventory::Inventory()
 {
-	Item temp;
-	this->addItem(&temp);
-	this->addItem(&temp);
 }
 
 Inventory::~Inventory()
