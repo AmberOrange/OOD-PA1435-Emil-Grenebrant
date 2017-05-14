@@ -50,9 +50,9 @@ void Room::setEnemyAlive(bool value)
 	this->enemyAlive = value;
 }
 
-IItem* Room::getLoot()
+Item* Room::getLoot()
 {
-	IItem* ret = this->item;
+	Item* ret = this->item;
 	this->item = nullptr;
 	return ret;
 }

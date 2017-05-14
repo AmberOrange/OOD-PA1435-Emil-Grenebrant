@@ -19,7 +19,7 @@ public:
 	void display();
 	Position getRoomPosition(std::string direction, Position pos);
 	IMonster* getMonster(Position pos);
-	IItem* getLoot(Position pos);
+	Item* getLoot(Position pos);
 	void setRoomLoot();
 };
 

@@ -9,7 +9,7 @@ class Room : public IRoom
 private:
 	IMonster* enemy;
 	bool enemyAlive;
-	IItem* item;
+	Item* item;
 	bool looted;
 	Position position;
 
@@ -19,7 +19,7 @@ public:
 
 	void generate();
 	void print();
-	IItem* getLoot();
+	Item* getLoot();
 	void getRoomLoot();
 	IMonster* getMonster();
 	void setEnemyAlive(bool value);

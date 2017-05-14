@@ -50,7 +50,7 @@ IMonster* Dungeon::getMonster(Position pos)
 	return rooms[pos.x][pos.y].getMonster();
 }
 
-IItem* Dungeon::getLoot(Position pos)
+Item* Dungeon::getLoot(Position pos)
 {
 	return this->rooms[pos.x][pos.y].getLoot();
 }
