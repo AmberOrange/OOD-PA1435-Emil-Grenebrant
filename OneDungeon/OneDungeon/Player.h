@@ -21,6 +21,7 @@ public:
 
 	void create(Position startRoom);
 	void openInventory();
+	Inventory getInventory();
 
 	virtual int getAttackValue();
 	virtual int getEvadeValue();
