@@ -29,6 +29,11 @@ void Room::print()
 {
 }
 
+void Room::setEnemyAlive(bool value)
+{
+	this->enemyAlive = value;
+}
+
 IItem* Room::getLoot()
 {
 	return item;
@@ -40,5 +45,12 @@ void Room::getRoomLoot()
 
 IMonster* Room::getMonster()
 {
-	return this->enemy;
+	if (this->enemyAlive == true)
+	{
+		return this->enemy;
+	}
+	else 
+	{
+		return nullptr;
+	}
 }
