@@ -1,5 +1,12 @@
 #include "Item.h"
 
+Item::Item(std::string name, int power, ITEM type, int slotNum)
+{
+	this->power = power;
+	this->name = name;
+	this->slotNum = slotNum;
+	this->type = type;	// Default armor
+}
 Item::Item()
 {
 	this->power = 0;

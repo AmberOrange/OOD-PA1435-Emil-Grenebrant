@@ -23,16 +23,17 @@ public:
 	void openInventory();
 	Inventory getInventory();
 
-	int getAttackValue();
-	int getEvadeValue();
-	bool inflictDamage(int attackValue);
-	void setGear(IItem* item);
-	bool addLoot(IItem* item);
-	bool isPlayerDead();
-	void useItem(IItem* item);
+	virtual int getAttackValue();
+	virtual int getEvadeValue();
+	virtual bool inflictDamage(int attackValue);
+	virtual void setGear(IItem* item);
+	virtual bool addLoot(IItem* item);
+	virtual bool isPlayerDead();
+	virtual void useItem(IItem* item);
+	virtual void displayHealth();
 
-	Position getPosition();
-	void setPosition(Position pos);
+	virtual Position getPosition();
+	virtual void setPosition(Position pos);
 };
 
 #endif

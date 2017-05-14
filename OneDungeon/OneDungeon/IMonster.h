@@ -4,6 +4,7 @@
 
 #include <time.h>
 #include <cstdlib>
+#include <iostream>
 
 class IMonster
 {
@@ -14,6 +15,7 @@ public:
 	virtual int getAttackValue() = 0;
 	virtual bool inflictDamage(int attackValue) = 0;
 	virtual bool calcEvade(int evadeValue) = 0;
+	virtual void displayHealth() = 0;
 };
 
 #endif

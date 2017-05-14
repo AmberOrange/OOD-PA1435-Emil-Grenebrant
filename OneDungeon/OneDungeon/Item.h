@@ -12,6 +12,7 @@ private:
 	int slotNum;
 	ITEM type;
 public:
+	Item(std::string name, int power, ITEM type, int slotNum);
 	Item();
 	void display();
 	std::string getString();

@@ -28,6 +28,8 @@ bool Monster::inflictDamage(int attackValue)
 	if (hp <= 0)
 		dead = true;
 
+	std::cout << "\nYou hit the monster for " << attackValue << " damage!" << std::endl;
+
 	return dead;
 }
 
@@ -43,6 +45,11 @@ bool Monster::calcEvade(int evadeValue)
 		evaded = true;
 
 	return evaded;
+}
+
+void Monster::displayHealth()
+{
+	std::cout << "\nMonster health: " << this->hp << std::endl;
 }
 
 void Monster::generate()
