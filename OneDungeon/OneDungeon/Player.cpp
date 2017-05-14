@@ -103,8 +103,6 @@ void Player::openInventory()
 {
 	bool exit = false;
 	Item item;
-	this->inventory.addItem(&item);
-	this->inventory.addItem(&item);
 
 	if (this->inventory.hasItems())
 	{
@@ -125,14 +123,10 @@ void Player::openInventory()
 			// Use
 			if (choice == "use")
 			{
-				std::cout << "Which item do you want to use?" << std::endl;
-				
 				IItem* item;
 
-				do {
-					std::cin >> choice;
-					item = this->inventory.getItem(choice);
-				} while (item == nullptr && choice != "exit");
+				std::cin >> choice;
+				item = this->inventory.getItem(choice);
 
 				this->useItem(item);
 				exit = true;
