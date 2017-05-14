@@ -20,6 +20,7 @@ public:
 	IItem* getLoot();
 	void getRoomLoot();
 	IMonster* getMonster();
+	void setEnemyAlive(bool value);
 };
 
 #endif

@@ -28,6 +28,11 @@ void Room::print()
 {
 }
 
+void Room::setEnemyAlive(bool value)
+{
+	this->enemyAlive = value;
+}
+
 IItem* Room::getLoot()
 {
 	return nullptr;
