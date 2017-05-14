@@ -1,8 +1,9 @@
 #ifndef ROOM_H
 #define ROOM_H
+#include <cstdlib>
 #include "IRoom.h"
 #include "Monster.h"
-
+#include "Item.h"
 class Room : public IRoom
 {
 private:
