@@ -10,8 +10,12 @@ private:
 	std::string name;
 	int power;
 	int slotNum;
+	ITEM type;
 public:
 	Item();
+	std::string getString();
+	ITEM getItemType();
+	int getPower();
 };
 
 #endif

@@ -1,19 +1,24 @@
 #ifndef INVENTORY_H
 #define INVENTORY_H
-#include "IInventory.h"
 
+#include "IInventory.h"
+#include "IPlayer.h"
+#include <vector>
 
 class Inventory : public IInventory
 {
-private:
-	IItem* items;
 public:
 	Inventory();
+	~Inventory();
 
-	void equip(std::string choice);
-	void getGear(std::string choice);
-	void use(std::string choice, int hp);
-	bool isItem(std::string choice);
+	IItem* getItem(std::string choice, int start);
+	void display();
+
+private:
+	std::vector<IItem*> items;
+
 };
 
-#endif
+#endif // !INVENTORY_H
+
+

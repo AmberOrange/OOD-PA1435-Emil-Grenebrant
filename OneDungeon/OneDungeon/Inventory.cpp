@@ -1,22 +1,29 @@
 #include "Inventory.h"
 
+
 Inventory::Inventory()
 {
 }
 
-void Inventory::equip(std::string choice)
+Inventory::~Inventory()
 {
 }
 
-void Inventory::getGear(std::string choice)
+void Inventory::display()
 {
+	int size = this->items.size();
+	for (int i = 0; i < size; i++)
+		this->items[i]->display();
 }
 
-void Inventory::use(std::string choice, int hp)
+IItem* Inventory::getItem(std::string choice, int start)
 {
-}
+	int size = this->items.size();
+	for (int i = 0; i < size; i++)
+	{
+		if (choice.find(this->items[i]->getString(), start))
+			return this->items[i];
+	}
 
-bool Inventory::isItem(std::string choice)
-{
-	return false;
+	return nullptr;
 }
