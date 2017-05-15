@@ -147,10 +147,10 @@
     <ClCompile Include="GameManager.cpp" />
     <ClCompile Include="Inventory.cpp" />
     <ClCompile Include="Item.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="Monster.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Room.cpp" />
-    <ClCompile Include="testSuite.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Combat.h" />
