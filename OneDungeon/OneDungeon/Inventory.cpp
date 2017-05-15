@@ -53,8 +53,13 @@ void Inventory::removeItem(IItem* _item)
 		int size = this->items.size();
 		for (int i = 0; i < size; i++)
 		{
-			if (this->items[i] == _item)
-				this->items.erase(items.begin() + i);
+			if (this->items[i]->getPower() == _item->getPower()
+				&& this->items[i]->getItemType() == _item->getItemType()
+				&& this->items[i]->getString() == _item->getString())
+			{
+				this->items.erase(this->items.begin() + i);
+				break;
+			}
 		}
 	}
 }
