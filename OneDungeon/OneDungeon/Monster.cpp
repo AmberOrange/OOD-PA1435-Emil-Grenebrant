@@ -8,7 +8,6 @@ Monster::Monster()
 	this->atkValue = 5;
 	this->speed = 5;
 	this->dead = false;
-	std::srand(time(nullptr));
 }
 
 Monster::~Monster()
