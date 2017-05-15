@@ -13,7 +13,7 @@ Room::~Room()
 void Room::generate()
 {
 	int random = std::rand() % 100;
-	if (random < 0)	// No chance
+	if (random < 100)
 	{
 		this->enemy = new Monster();
 		this->enemy->generate();

@@ -400,6 +400,100 @@ int main()
 		testFailed++;
 	}
 
+	// Dungeon related testing
+
+	Dungeon dungeon;
+	dungeon.generate();
+	Position position = { 0, 0 };
+	Item* testLoot;
+	int fails = 0;
+	for (int i = 0; i < DUNGEON_WIDTH; i++)
+	{
+		position.x = i;
+		for (int j = 0; j < DUNGEON_WIDTH; j++)
+		{
+			position.y = j;
+			testLoot = dungeon.getLoot(position);
+			if (testLoot == nullptr)
+				fails++;
+		}
+	}
+	std::cout << "Fresh Dungeon: Looted " << (DUNGEON_HEIGHT*DUNGEON_WIDTH) - fails << " rooms out of expected " << (DUNGEON_HEIGHT*DUNGEON_WIDTH);
+	if (fails == 0)
+	{
+		std::cout << " OK!" << std::endl;
+		testSuccess++;
+	}
+	else
+	{
+		std::cout << " Failed!" << std::endl;
+		testFailed++;
+	}
+
+	fails = 0;
+	for (int i = 0; i < DUNGEON_WIDTH; i++)
+	{
+		position.x = i;
+		for (int j = 0; j < DUNGEON_WIDTH; j++)
+		{
+			position.y = j;
+			testLoot = dungeon.getLoot(position);
+			if (testLoot != nullptr)
+				fails++;
+		}
+	}
+
+	std::cout << "Looted Dungeon: Looted " << fails << " rooms out of expected 0";
+	if (fails == 0)
+	{
+		std::cout << " OK!" << std::endl;
+		testSuccess++;
+	}
+	else
+	{
+		std::cout << " Failed!" << std::endl;
+		testFailed++;
+	}
+
+	fails = 0;
+	bool isMonsterDead;
+	for (int i = 0; i < DUNGEON_WIDTH; i++)
+	{
+		position.x = i;
+		for (int j = 0; j < DUNGEON_WIDTH; j++)
+		{
+			position.y = j;
+			isMonsterDead = dungeon.isMonsterDead(position);
+			if (!isMonsterDead)
+				dungeon.setMonsterDead(position);
+		}
+	}
+
+	std::cout << "Looked through all rooms and killed all monsters OK!" << std::endl;
+
+	for (int i = 0; i < DUNGEON_WIDTH; i++)
+	{
+		position.x = i;
+		for (int j = 0; j < DUNGEON_WIDTH; j++)
+		{
+			position.y = j;
+			isMonsterDead = dungeon.isMonsterDead(position);
+			if (!isMonsterDead)
+				fails++;
+		}
+	}
+
+	std::cout << "Enemies remaining in the dungeon: " << fails << " out of expected 0";
+	if (fails == 0)
+	{
+		std::cout << " OK!" << std::endl;
+		testSuccess++;
+	}
+	else
+	{
+		std::cout << " Failed!" << std::endl;
+		testFailed++;
+	}
 
 
 	std::cout << "\n\nTotal number of tests: " << testSuccess + testFailed << std::endl;

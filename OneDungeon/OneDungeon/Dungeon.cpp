@@ -66,5 +66,5 @@ bool Dungeon::isMonsterDead(Position pos)
 
 void Dungeon::setMonsterDead(Position pos)
 {
-	this->rooms[pos.x][pos.y].setEnemyStatus(false);
+	this->rooms[pos.x][pos.y].setEnemyStatus(true);
 }
