@@ -13,7 +13,7 @@ Room::~Room()
 void Room::generate()
 {
 	int random = std::rand() % 100;
-	if (random < 100)
+	if (random < 0)	// No chance
 	{
 		this->enemy = new Monster();
 		this->enemy->generate();
@@ -45,7 +45,7 @@ void Room::print()
 {
 }
 
-void Room::setEnemyAlive(bool value)
+void Room::setEnemyDead(bool value)
 {
 	this->enemyDead = value;
 }
@@ -75,5 +75,7 @@ IMonster* Room::getMonster()
 
 bool Room::isMonsterDead()
 {
+	if (this->enemyDead)
+		return true;
 	return this->enemy->isMonsterDead();
 }

@@ -1,6 +1,7 @@
 #ifndef ROOM_H
 #define ROOM_H
 #include <cstdlib>
+#include <ctime>
 #include "IRoom.h"
 #include "Monster.h"
 #include "Item.h"
@@ -22,7 +23,7 @@ public:
 	Item* getLoot();
 	void getRoomLoot();
 	IMonster* getMonster();
-	void setEnemyAlive(bool value);
+	void setEnemyDead(bool value);
 	bool isMonsterDead();
 };
 
