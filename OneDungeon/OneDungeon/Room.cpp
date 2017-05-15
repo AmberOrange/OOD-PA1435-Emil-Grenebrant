@@ -34,7 +34,7 @@ void Room::generate()
 	if (random < 60)
 		this->item = new Item("Potion", 100, ITEM::HPPOT, 0);
 	else if (random < 80)
-		this->item = new Item("Sword", 50, ITEM::WEAPON, 0);
+		this->item = new Item("Sword", 150, ITEM::WEAPON, 0);
 	else if (random < 100)
 		this->item = new Item("Armor", 80, ITEM::ARMOR, 0);
 	else
@@ -45,7 +45,7 @@ void Room::print()
 {
 }
 
-void Room::setEnemyDead(bool value)
+void Room::setEnemyStatus(bool value)
 {
 	this->enemyDead = value;
 }
@@ -61,7 +61,7 @@ void Room::getRoomLoot()
 {
 }
 
-IMonster* Room::getMonster()
+Monster* Room::getMonster()
 {
 	if (this->enemyDead == false)
 	{

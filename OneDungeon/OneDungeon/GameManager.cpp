@@ -85,7 +85,7 @@ void GameManager::move(std::string direction)
 	{
 		enemy = cave.getMonster(currentPos);
 
-		if (enemy != nullptr)
+		if (!this->cave.isMonsterDead(currentPos))
 		{
 			combat.initCombat(&this->user, enemy);
 			if (this->cave.isMonsterDead(currentPos) == true) 

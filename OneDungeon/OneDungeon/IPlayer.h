@@ -17,7 +17,6 @@ public:
 	virtual int getEvadeValue() = 0;
 	virtual bool inflictDamage(int attackValue) = 0;
 	virtual void setGear(IItem* item) = 0;
-	virtual bool addLoot(IItem* item) = 0;
 	virtual bool isPlayerDead() = 0;
 	virtual void displayHealth() = 0;
 

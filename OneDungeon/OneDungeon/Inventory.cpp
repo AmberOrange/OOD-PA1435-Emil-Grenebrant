@@ -45,3 +45,21 @@ bool Inventory::hasItems()
 {
 	return this->items.size() > 0 ? true : false;
 }
+
+void Inventory::removeItem(IItem* _item)
+{
+	if (_item)
+	{
+		int size = this->items.size();
+		for (int i = 0; i < size; i++)
+		{
+			if (this->items[i]->getPower() == _item->getPower()
+				&& this->items[i]->getItemType() == _item->getItemType()
+				&& this->items[i]->getString() == _item->getString())
+			{
+				this->items.erase(this->items.begin() + i);
+				break;
+			}
+		}
+	}
+}

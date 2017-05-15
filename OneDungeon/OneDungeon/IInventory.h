@@ -3,6 +3,7 @@
 #define IINVENTORY_H
 
 #include "IItem.h"
+#include "Item.h"
 #include <string>
 #include <iostream>
 
@@ -13,11 +14,20 @@ public:
 
 	// getItem()	- retrieves item
 	//	gear		- string with item name
-	//	offset		- int with offset where name starts
 	virtual IItem* getItem(const std::string gear) = 0;
 	
 	// display()	- display all items in inventory
 	virtual void display() = 0;
+
+	// hasItem()	- returns whether or not the inventory has items
+	virtual bool hasItems() = 0;
+
+	// addItem()
+	//	_item		- the item to add to inventory
+	virtual void addItem(Item* _item) = 0;
+
+	// removeItem()
+	virtual void removeItem(IItem* _item) = 0;
 };
 
 #endif

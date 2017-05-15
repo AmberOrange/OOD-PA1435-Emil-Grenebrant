@@ -22,8 +22,8 @@ public:
 	void print();
 	Item* getLoot();
 	void getRoomLoot();
-	IMonster* getMonster();
-	void setEnemyDead(bool value);
+	Monster* getMonster();
+	void setEnemyStatus(bool value);
 	bool isMonsterDead();
 };
 

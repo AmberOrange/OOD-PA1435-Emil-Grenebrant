@@ -31,7 +31,7 @@ Position Dungeon::generate()
 		std::rand() % DUNGEON_HEIGHT
 	};
 
-	this->rooms[randPos.x][randPos.y].setEnemyDead(true);
+	this->rooms[randPos.x][randPos.y].setEnemyStatus(false);
 
 	return randPos;
 }
@@ -66,5 +66,5 @@ bool Dungeon::isMonsterDead(Position pos)
 
 void Dungeon::setMonsterDead(Position pos)
 {
-	this->rooms[pos.x][pos.y].setEnemyDead(true);
+	this->rooms[pos.x][pos.y].setEnemyStatus(false);
 }
