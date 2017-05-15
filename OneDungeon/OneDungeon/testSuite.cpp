@@ -14,6 +14,7 @@
 
 int main()
 {
+	std::srand(time(NULL));
 	Position pos1;
 	pos1.x = 1;
 	pos1.y = 1;

@@ -3,6 +3,7 @@
 
 int main()
 {
+	std::srand(time(NULL));
 
 	GameManager gameManager;
 	gameManager.startGame();
