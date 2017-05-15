@@ -147,7 +147,6 @@
     <ClCompile Include="GameManager.cpp" />
     <ClCompile Include="Inventory.cpp" />
     <ClCompile Include="Item.cpp" />
-    <ClCompile Include="HPPot.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Monster.cpp" />
     <ClCompile Include="Player.cpp" />
@@ -155,15 +154,12 @@
     <ClCompile Include="testSuite.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Armor.h" />
     <ClInclude Include="Combat.h" />
     <ClInclude Include="Dungeon.h" />
     <ClInclude Include="Global.h" />
     <ClInclude Include="Inventory.h" />
     <ClInclude Include="Item.h" />
     <ClInclude Include="GameManager.h" />
-    <ClInclude Include="Equipable.h" />
-    <ClInclude Include="HPPot.h" />
     <ClInclude Include="IDungeon.h" />
     <ClInclude Include="ICombat.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
@@ -191,8 +187,6 @@
     <ClInclude Include="Position.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
     </ClInclude>
-    <ClInclude Include="Usable.h" />
-    <ClInclude Include="Weapon.h" />
     <ClInclude Include="Room.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
