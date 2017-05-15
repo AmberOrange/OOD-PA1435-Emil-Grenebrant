@@ -48,6 +48,9 @@
     <ClCompile Include="HPPot.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="testSuite.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="IPlayer.h">
