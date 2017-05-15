@@ -45,7 +45,7 @@ void Room::print()
 {
 }
 
-void Room::setEnemyAlive(bool value)
+void Room::setEnemyStatus(bool value)
 {
 	this->enemyDead = value;
 }
@@ -61,7 +61,7 @@ void Room::getRoomLoot()
 {
 }
 
-IMonster* Room::getMonster()
+Monster* Room::getMonster()
 {
 	if (this->enemyDead == false)
 	{

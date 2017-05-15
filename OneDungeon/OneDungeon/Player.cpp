@@ -89,11 +89,6 @@ void Player::displayHealth()
 	std::cout << "\nPlayer health: " << this->hp << std::endl;
 }
 
-bool Player::addLoot(IItem * item)
-{
-	return false;
-}
-
 bool Player::isPlayerDead()
 {
 	return this->dead;
